@@ -1,0 +1,289 @@
+<?php
+
+include("db.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.J. Fruis</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserratfamily=Righteous&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    
+    <div class="main">
+    <!-- <div class="header">
+        
+        <div class="logo">
+
+        </div>
+        <div class="menu nav">
+            
+      
+        <li>
+        <?php
+            if(isset($_COOKIE["username"])){
+                echo "<a href='ProductDetails.php?ses=su'>";
+            }
+            else{
+                echo "<a href='signup.php'>";
+            }
+            ?> All</a> </li>
+            <li>
+        <?php
+            if(isset($_COOKIE["username"] ) ){
+                echo '<a href="ProductDetails.php?ses=wi">';
+            }
+            else{
+                echo "<a href='signup.php'>";
+            }
+            ?>Winter</a> </li>
+             <li>
+        <?php
+            if(isset($_COOKIE["username"])){
+                echo '<a href="ProductDetails.php?ses=su">';
+            }
+            else{
+                echo "<a href='signup.php'>";
+            }
+            ?> Summer</a> </li>
+            
+            <li>
+        <?php
+            if(isset($_COOKIE["username"])){
+                echo '<a href="ProductDetails.php?ses=mo">';
+            }
+            else{
+                echo "<a href='signup.php'>";
+            }
+            ?> Monsoon</a> </li>
+            
+            
+        
+        </div>
+        <div class="search">
+        <div class="cart">
+                <a onclick="ckh('cart')">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+        </svg>      
+        </a>
+        </div>        
+        
+        </div>
+
+        <div class="search">
+        
+        <div class="userlo">
+        <a onclick="ckh('user')">
+        <svg xmlns="http://www.w3.org/2000/svg" id="user" x="0" y="0" version="1.1" viewBox="0 0 500 500" xml:space="preserve"><switch><g><linearGradient id="XMLID_2_" x1="232.701" x2="254.411" y1="276.847" y2="549.872" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFCA9D"></stop><stop offset=".854" stop-color="#FFD9A9"></stop></linearGradient><path id="XMLID_802_" fill="url(#XMLID_2_)" d="m455.3 504.2-5.1-113.6c-4.8-28.6-24.7-51.1-50-56.7l-91.4-16.1c-8.1-1.5-14.4-11.3-14.5-21.6l-2-47.4h-87.9l-2.1 49.4c-.4 9.7-6.5 17.7-14.6 19.2L97.4 334c-25.3 5.6-45.2 28.1-50 56.7l-5.1 113.6c51.6-.1 361.1-.1 413-.1z"></path><linearGradient id="XMLID_3_" x1="249" x2="249" y1="354.333" y2="474.409" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF"></stop><stop offset="1" stop-color="#E6FFFF"></stop></linearGradient><path id="XMLID_801_" fill="url(#XMLID_3_)" d="m308.8 504.2 20.4-183.5-17.7-3.3c-8.1-1.5-14.2-9.5-14.6-19.2l-48.1 55.5-48.1-55.5c-.4 9.7-6.5 17.7-14.6 19.2l-17.3 2.8 27 184.1h113z"></path><g id="XMLID_797_"><linearGradient id="XMLID_4_" x1="370.28" x2="370.28" y1="315" y2="496.496" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1A1A2B"></stop><stop offset="1" stop-color="#2E1B45"></stop></linearGradient><path id="XMLID_799_" fill="url(#XMLID_4_)" d="M460.6 400.5c0-39.6-19.2-60.4-51-68.3l-79-10.5-53.1 182.6H463l-2.4-103.8z"></path><linearGradient id="XMLID_5_" x1="129.615" x2="129.615" y1="315" y2="496.496" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1A1A2B"></stop><stop offset="1" stop-color="#2E1B45"></stop></linearGradient><path id="XMLID_798_" fill="url(#XMLID_5_)" d="M90.8 332.2c-31.8 7.9-51 28.7-51 68.3L37 504.2h185.2l-51.4-183.6-80 11.6z"></path></g><linearGradient id="XMLID_6_" x1="307.766" x2="307.099" y1="459.313" y2="303.969" gradientUnits="userSpaceOnUse"><stop offset=".038" stop-color="#001"></stop><stop offset="1" stop-color="#2E1B45"></stop></linearGradient><path id="XMLID_796_" fill="url(#XMLID_6_)" d="m297.8 506.8 33.7-58.2c4.2-6.4 8-10.6 1-20.3l-23-34h24.9c7.2 0 8.2-1.6 8.2-11.6l-1.4-55.8s-.4-2-.9-2.7c-.5-.6-2-1.3-2-1.3l-23-5.5-42.4 189.4h24.9z"></path><linearGradient id="XMLID_7_" x1="248.797" x2="248.797" y1="373.667" y2="489.684" gradientUnits="userSpaceOnUse"><stop offset=".549" stop-color="#FD0036"></stop><stop offset=".995" stop-color="#FF005F"></stop></linearGradient><path id="XMLID_795_" fill="url(#XMLID_7_)" d="m241.1 423-3.5 81.2h22.6l-3.5-81.6c-.2-3.3.4-8.5 1.2-10.7l8.6-20.7-17.5-36.4v-.8l-.2.4-.2-.4v.9L231 391.2l8.7 21.2c1.3 3 1.5 6.7 1.4 10.6z"></path><linearGradient id="XMLID_8_" x1="190.27" x2="189.603" y1="469.359" y2="314.054" gradientUnits="userSpaceOnUse"><stop offset=".038" stop-color="#001"></stop><stop offset="1" stop-color="#2E1B45"></stop></linearGradient><path id="XMLID_794_" fill="url(#XMLID_8_)" d="M162.9 393.1h24.9l-23 34c-7 9.7-3.3 13.9.9 20.3l34.5 58.2h25.3l-43.7-187.8-21.9 3.9s-2.6.2-3.3 2.3c-.2.7-.5 2.9-.5 2.9l-1.5 54.7c.2 9.9 1.1 11.5 8.3 11.5z"></path><path id="XMLID_793_" fill="#fff" d="M302.7 290.7c-2.6-6.1-4.3-4.7-8 .3l-45.9 62.7-45.9-62.7c-3.7-5.1-5.4-6.4-8-.3l-13.4 25.7 41.4 82.9c2.9 5.8 5.1 5.4 7.7-.3l18.1-44.6 18.1 44.6c2.6 5.8 4.9 6.1 7.7.3l41.4-82.9-13.2-25.7z"></path><g id="XMLID_761_"><g id="XMLID_780_"><linearGradient id="XMLID_9_" x1="349.625" x2="326.125" y1="170.211" y2="170.211" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEC797"></stop><stop offset="1" stop-color="#FFD9A9"></stop></linearGradient><path id="XMLID_792_" fill="url(#XMLID_9_)" d="m329.9 134 6.2.4c9.3 2.6 19.4 11.4 17.1 25.6-2.1 12.9-3.2 14-5.8 30-3.7 22.7-22.3 15.3-22.3 15.3l4.8-71.3z"></path><linearGradient id="XMLID_10_" x1="146.167" x2="173.667" y1="172.711" y2="172.711" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEC797"></stop><stop offset="1" stop-color="#FFD9A9"></stop></linearGradient><path id="XMLID_782_" fill="url(#XMLID_10_)" d="m168.7 136.5-6.2.4c-9.3 2.6-19.4 11.4-17.1 25.6 2.2 12.9 3.2 14 5.8 30 3.7 22.7 22.3 15.3 22.3 15.3l-4.8-71.3z"></path></g><linearGradient id="XMLID_11_" x1="249.223" x2="249.889" y1="95.822" y2="306.488" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEC797"></stop><stop offset="1" stop-color="#FFD9A9"></stop></linearGradient><path id="XMLID_763_" fill="url(#XMLID_11_)" d="m248.7 57.3-87.2.4 4.6 146.2c0 10.9.8 19.9 11.9 35.3l31 35.6c10.3 11.2 18.5 12.2 29.7 12.2h20.2c11.2 0 18.4-3.2 26.1-11 0 0 20.3-18.4 33.8-34.5 8.2-9.8 10.3-19.8 10.3-30.7l7.4-153.1-87.8-.4z"></path><linearGradient id="XMLID_12_" x1="247.798" x2="247.798" y1="-3.667" y2="72.345" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4D969"></stop><stop offset=".863" stop-color="#F4BC55"></stop></linearGradient><path id="XMLID_762_" fill="url(#XMLID_12_)" d="M163.4 140.8c-2.4-4.1-10.6-36.7-11-57.4-.5-27.7-1.8-83.4 94-83.4h8.7c53 0 93.5 31.9 87.5 86.5-3.1 27.6-5.6 40-5.8 40.9-1.9 11.6-4.2 11.6-4 11.5v-38.8c0-13.8-1.3-41.7-28.6-35.8l-47.5 17.1s16.3-11.6 7.9-11.2c-6.2.3-51.6 16.2-51.6 16.2s20.6-16.2 15.6-16.5c-6.1-.4-44.6 19.2-44.6 19.2l9.3-25.2c-25.7-4.1-29.5 19.5-29.5 40.2l.2 31.6c0 3.6.3 6.5-.6 5.1z"></path></g></g></switch></svg>
+        </a>
+        </div>
+        </div>
+
+    </div> -->
+    <div class="parts">
+        <div class="con_left">
+            <div class="tex">            
+            <p>Organic Products </p>
+        <h1> Fresh Organic</h1>    
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, quasi, suscipit quos beatae neque illum sint minima iste placeat ex quae repellendus culpa exercitationem quisquam esse ipsa debitis velit temporibus? </p>
+        </div>    
+    </div>
+        <div class="con_right">
+
+        </div>
+    </div>
+</div>
+<div class="prelbl">
+<label> Winter </label>
+</div>
+
+<div class="card-container">
+
+        <?php 
+        $selectimg="select * from product where season='wi' order by rand() limit 4";
+        $query=mysqli_query($conn,$selectimg);
+        $nums=mysqli_num_rows($query);
+        if($nums>3){
+            $selectimg="select * from product where season='wi' order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+                
+        }
+        else{
+            $selectimg="select * from product order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+            
+        }
+        $res=mysqli_fetch_array($query);
+        
+        while($res=mysqli_fetch_array($query)){ ?>
+        <div class="card">
+            
+            <img src="./uploadedimages/<?php echo $res['fimage'];?>" alt="">
+            <div class="card-content">
+                <h3><?php echo $res['pname'];?></h3>                
+                
+            </div>
+        </div>
+        
+        <?php }?>
+        <div class="card">
+        <?php
+            if(isset($_COOKIE["username"])){
+                echo "<a href='ProductDetails.php?ses=wi'>";
+                ?><label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+            <?php }
+            else{
+                ?><label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+                <?php echo "<a href='signup.php'>";
+                // header("Location: signup.php");
+            }
+            ?>
+            
+        </a>
+        </div>
+        
+    </div>
+
+    <div class="prelbl">
+<label> Summer </label>
+</div>
+    <div class="card-container">
+        <?php
+        $selectimg="select * from product where season='su' order by rand() limit 4";
+        $query=mysqli_query($conn,$selectimg);
+        $nums=mysqli_num_rows($query);
+        if($nums>3){
+            $selectimg="select * from product where season='su' order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+                
+        }
+        else{
+            $selectimg="select * from product order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+            
+        }
+        $res=mysqli_fetch_array($query);
+        
+        while($res=mysqli_fetch_array($query)){ ?>
+        
+        <div class="card">
+            
+            <img src="./uploadedimages/<?php echo $res['fimage'];?>" alt="">
+            <div class="card-content">
+                <h3><?php echo $res['pname'];?></h3>                
+                
+            </div>
+        </div>
+        
+        <?php }?>
+        <div class="card">
+            <?php
+            if(isset($_COOKIE["username"])){
+                echo "<a href='ProductDetails.php?ses=su'>";
+                ?><label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+            <?php
+            }
+            else{
+                ?><label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+                <?php echo "<a href='signup.php'>";
+                // header("Location: signup.php");
+            }
+            ?>
+            
+            
+        </a>
+        </div>
+        
+    </div>
+
+
+    
+    <div class="prelbl">
+<label> Monsoon </label>
+</div>
+    <div class="card-container">
+        <?php
+        $selectimg="select * from product where season='mo' order by rand() limit 4";
+        $query=mysqli_query($conn,$selectimg);
+        $nums=mysqli_num_rows($query);
+        if($nums>3){
+            $selectimg="select * from product where season='mo' order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+                
+        }
+        else{
+            $selectimg="select * from product order by rand() limit 4";
+            $query=mysqli_query($conn,$selectimg);
+            
+        }
+        $res=mysqli_fetch_array($query);
+        
+        while($res=mysqli_fetch_array($query)){ ?>
+        <div class="card">
+            
+            <img src="./uploadedimages/<?php echo $res['fimage'];?>" alt="">
+            <div class="card-content">
+                <h3><?php echo $res['pname'];?></h3>                
+                
+            </div>
+        </div>
+        
+        <?php }?>
+        <div class="card">
+        <?php
+            if(isset($_COOKIE["username"])){
+                echo "<a href='ProductDetails.php?ses=mo'>";?>
+                <label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+                <?php
+            }
+            else{
+                ?><label> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></label>
+                <?php echo "<a href='signup.php'>";
+                // header("Location: signup.php");
+            }
+            ?>
+            
+        </a>
+        </div>
+        
+    </div>
+</body>
+<script>
+
+    function ckh($chkname){
+        
+        
+        <?php
+        if(isset($_COOKIE["username"])){ ?>
+        if($chkname=='user'){
+            window.location.href="./user_details.php";
+        }else{
+            window.location.href="./cart.php";
+        }
+            
+        <?php }
+        else{?>        
+        window.location.href="./signup.php";
+        <?php } ?>
+        
+    }
+    </script>
+</html>
