@@ -1,4 +1,4 @@
-<b> FreshFruitHub </b>
+<b> <h1> FreshFruitHub  </h1></b><br />
 This is my inaugural venture into creating a fruit selling website, so there might be some teething issues or methods that need refinement.
 
 Services:
